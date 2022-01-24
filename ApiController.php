@@ -44,5 +44,11 @@ class ApiController extends BaseController
         $thirtyArr = $this->get_recent_date(30);
         $thismonthStart = strtotime(date('Y-m-d 00:00:00', strtotime($thirtyArr[1]))) * 1000;
         $thismonthEnd = strtotime(date('Y-m-d 23:59:59', strtotime($thirtyArr[30]))) * 1000;
+        $data['month_total'] = Yii::$app->db->createCommand($weekMonthSql)
+                            ->bindValue(':created_at', $thismonthStart)
+                            ->bindValue(':created_at2', $thismonthEnd)
+                            ->queryScalar();
+
+        return $data;
     }
 }
