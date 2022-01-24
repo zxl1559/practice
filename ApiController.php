@@ -20,6 +20,7 @@ class ApiController extends BaseController
             ce_activity
         SQL;
         $data['total'] = Yii::$app->db->createCommand($sql)->queryScalar();
+
         //一周任务数
         //获取最近一周时间
         $sevenArr = $this->get_recent_date(7);
