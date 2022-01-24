@@ -35,5 +35,6 @@ class ApiController extends BaseController
             created_at<=:created_at2
         SQL;
         $thisweekStart = strtotime(date('Y-m-d 00:00:00', strtotime($sevenArr[1]))) * 1000;
+        $thisweekEnd = strtotime(date('Y-m-d 23:59:59', strtotime($sevenArr[7]))) * 1000;
     }
 }
