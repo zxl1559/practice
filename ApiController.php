@@ -41,5 +41,6 @@ class ApiController extends BaseController
                             ->bindValue(':created_at2', $thisweekEnd)
                             ->queryScalar();
         //一个月内任务数
+        $thirtyArr = $this->get_recent_date(30);
     }
 }
