@@ -51,4 +51,13 @@ class ApiController extends BaseController
 
         return $data;
     }
+
+    /*
+    * 平台首页-检测任务新增趋势(最近一周).
+    *
+    * @return string
+    */
+    public function actionActivityTrend()
+    {
+    }
 }
