@@ -42,5 +42,6 @@ class ApiController extends BaseController
                             ->queryScalar();
         //一个月内任务数
         $thirtyArr = $this->get_recent_date(30);
+        $thismonthStart = strtotime(date('Y-m-d 00:00:00', strtotime($thirtyArr[1]))) * 1000;
     }
 }
