@@ -24,5 +24,16 @@ class ApiController extends BaseController
         //一周任务数
         //获取最近一周时间
         $sevenArr = $this->get_recent_date(7);
+        $weekMonthSql = <<<SQL
+        SELECT
+            count(*) AS total
+        FROM
+            ce_activity
+        WHERE
+            created_at>=:created_at
+        AND
+            created_at<=:created_at2
+        SQL;
+        $thisweekStart = strtotime(date('Y-m-d 00:00:00', strtotime($sevenArr[1]))) * 1000;
     }
 }
