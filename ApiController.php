@@ -59,5 +59,7 @@ class ApiController extends BaseController
     */
     public function actionActivityTrend()
     {
+        //获取最近7天
+        $dateArr = $this->getRecentDate(7);
     }
 }
